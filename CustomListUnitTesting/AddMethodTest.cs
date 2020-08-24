@@ -20,21 +20,24 @@ namespace CustomListUnitTesting
         //Assert
 
         [TestMethod]
-        public void Execute_AddOneItem_IntValue_NewListIsNotNull()
+        public void Execute_AddOneItem_IntValue_CountEqualsOne()
         {
             //add a single item to the list
 
             //Arrange
             int itemOne = 3;
+            int expected = 1;
+            int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
             //Act
             //calls the Add method from CustomList to add the variable '3' to the list
             newIntList.Add(itemOne);
+            actual = newIntList.Count;
 
             //Assert
             //checks to see that the instantiated list is no longer null
-            Assert.IsNotNull(newIntList);
+            Assert.Equals(expected, actual);
         }
 
         [TestMethod]
