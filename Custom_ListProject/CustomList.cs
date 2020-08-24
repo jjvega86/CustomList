@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,30 +53,36 @@ namespace Custom_ListProject
 
             if (_count == _capacity)
             {
-                //need to create a new array
-                //three buckets
-                //create a temporary array to transfer values
-                //then a new array with the new capacity    
-                T[] tempArray = new T[_count];
-                for (int i = 0; i < _count; i++)
-                {
-                    tempArray[i] = _items[i];
-
-                }
-
-                T[] newArray = new T[_capacity * 2];
-                for (int i = 0; i < newArray.; i++)
-                {
-                    tempArray[i] = _items[i];
-
-                }
-
-
-
+                Capacity = IncreaseArrayCapacity(ref _count, ref _capacity);
+                
             }
 
         }
 
+        private int IncreaseArrayCapacity(ref int count, ref int capacity)
+        {
+            //need to create a new array
+            //three buckets
+            //create a temporary array to transfer values
+            //then a new array with the new capacity 
+
+            int newCapacity = capacity * 2;
+            T[] tempArray = new T[count];
+            T[] newArray = new T[newCapacity];
+
+            
+            for (int i = 0; i < count; i++)
+            {
+                tempArray[i] = _items[i];
+                newArray[i] = tempArray[i];
+
+            }
+            _items = newArray;
+            return newCapacity;
+            
+        }
+
+        
 
 
     }
