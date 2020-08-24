@@ -42,14 +42,22 @@ namespace CustomListUnitTesting
 
         [TestMethod]
 
-        public void TestMethod2()
+        public void Execute_AddTwoItems_IntValue_CountEqualsTwo()
         {
             //Arrange
             // add two items to the list
+            int itemOne = 3;
+            int itemTwo = 4;
+            int expected = 2;
+            int actual = 0;
+            CustomList<int> newIntList = new CustomList<int>();
 
             //Act
+            newIntList.Add(itemOne, itemTwo);
+            actual = newIntList.Count;
 
             //Assert
+            Assert.Equals(expected, actual);
 
         }
 
