@@ -34,7 +34,7 @@ namespace Custom_ListProject
             }
         }
 
-        public CustomList()
+        public CustomList() // constructor sets initial count to 0, capacity to 4, and instantiates the array with size as default capacity
         {
             _count = 0;
             _capacity = 4;
@@ -45,9 +45,8 @@ namespace Custom_ListProject
 
 
 
-        public void Add(T item)
+        public void Add(T item) // generic item allows any data type to be passed in
         {
-            T[] tempArray = new T[];
             _items[_count] = item;
             _count++;
 
@@ -57,6 +56,22 @@ namespace Custom_ListProject
                 //three buckets
                 //create a temporary array to transfer values
                 //then a new array with the new capacity    
+                T[] tempArray = new T[_count];
+                for (int i = 0; i < _count; i++)
+                {
+                    tempArray[i] = _items[i];
+
+                }
+
+                T[] newArray = new T[_capacity * 2];
+                for (int i = 0; i < newArray.; i++)
+                {
+                    tempArray[i] = _items[i];
+
+                }
+
+
+
             }
 
         }
