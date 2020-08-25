@@ -86,6 +86,30 @@ namespace Custom_ListProject
             
         }
 
+        public bool Remove(T item)
+        {
+            //I want to look through all of the items in an array
+            //if found, I want to remove that item
+            //then assign all items ahead of it one index down in the array
+            //if the count shrinks to half 
+            
+            bool wasRemoved = false;
+
+            for (int i = 0; i < _items.Length; i++)
+            {
+                if (_items[i].Equals(item))
+                {
+
+                    _count--;
+
+                }
+
+            }
+
+            return wasRemoved;
+
+        }
+
         
 
 

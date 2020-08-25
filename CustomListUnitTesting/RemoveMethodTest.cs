@@ -197,7 +197,7 @@ namespace CustomListUnitTesting
             newIntList.Add(itemSix);
             newIntList.Remove(itemThree);
             
-            actual = itemFour;
+            actual = newIntList[2];
 
 
             //Assert
