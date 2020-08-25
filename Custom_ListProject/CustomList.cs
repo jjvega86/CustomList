@@ -91,7 +91,7 @@ namespace Custom_ListProject
             //I want to look through all of the items in an array
             //if found, I want to remove that item
             //then assign all items ahead of it one index down in the array
-            //if the count shrinks to half 
+            //if the count shrinks to half of the capacity, I want to decrease the array capacity by half
             
             bool wasRemoved = false;
 
@@ -99,14 +99,38 @@ namespace Custom_ListProject
             {
                 if (_items[i].Equals(item))
                 {
+                    _items[i] = _items[i+1];
+                    i++;
 
+                    for (int j = i; j < _items.Length-1; j++)
+                    {
+                        _items[j] = _items[j + 1];
+
+                    }
+
+                    _items[_items.Length] = default;
                     _count--;
-
+                    wasRemoved = true;
+                    break;
                 }
+            }
 
+            if (_count == (_capacity / 2))
+            {
+               Capacity =  DecreaseArrayCapacity();
             }
 
             return wasRemoved;
+
+        }
+
+        private int DecreaseArrayCapacity()
+        {
+            int newCapacity = _capacity/2;
+
+
+
+            return newCapacity;
 
         }
 

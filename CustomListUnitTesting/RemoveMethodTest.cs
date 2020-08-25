@@ -44,7 +44,7 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void ExecuteRemoveTwoItems_CapacityEqualsFour()
         {
-            // removes two values from the CustomList, resulting in the array shrinking to original capacity
+            // removes two elements from the CustomList, resulting in the array shrinking to original capacity
 
             // Arrange
             int itemOne = 3;
@@ -78,7 +78,7 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void ExecuteRemoveItemFive_ReturnEqualsFalse()
         {
-            // attempts to remove an item that's not in the array. Should return false
+            // attempts to remove an element that's not in the array. Should return false
             //Arrange
             int itemOne = 3;
             int itemTwo = 4;
@@ -102,14 +102,15 @@ namespace CustomListUnitTesting
 
 
             //Assert
-            // checks for return bool false since item is not in list
+            // checks for return bool false since element is not in array
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void ExecuteRemoveItemOne_ReturnEqualsTrue()
         {
-            //confirms successful removal of item with a boolean check
+            //confirms successful removal of element with a boolean check
+
             //Arrange
             int itemOne = 3;
             int itemTwo = 4;
@@ -134,14 +135,14 @@ namespace CustomListUnitTesting
 
 
             //Assert
-            // checks for return bool true since item was added to list
+            // checks for return bool true since element was added to array
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void ExecuteRemoveItemOne_IndexZeroEqualsFour()
         {
-            // tests that items automatically move down index when item is removed
+            // tests that elements automatically move down one index when element is removed
             //Arrange
             int itemOne = 3;
             int itemTwo = 4;
@@ -166,14 +167,14 @@ namespace CustomListUnitTesting
 
 
             //Assert
-            // checks for actual expected value of 4, which should be in the 0 index after itemOne is removed
+            // checks for actual expected value of 4, which should be in the 0 index after itemOne element is removed
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void ExecuteRemoveItemThree_ItemFourEqualsSeven()
         {
-            // two duplicates in the CustomList: when Remove method is called, it should only remove the first one it finds, not all objects
+            // two duplicates in the CustomList: when Remove method is called, it should only remove the first element it finds, not all elements
             // of same value
 
             //Arrange
@@ -201,7 +202,7 @@ namespace CustomListUnitTesting
 
 
             //Assert
-            // checks for itemFour in array. Only itemThree should have been removed, leaving itemFour.
+            // checks for itemFour in array at the [2] location. Only itemThree should have been removed, leaving itemFour to take its spot.
             Assert.AreEqual(expected, actual);
         }
     }
