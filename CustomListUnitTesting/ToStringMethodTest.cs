@@ -85,11 +85,11 @@ namespace CustomListUnitTesting
         }
 
         [TestMethod]
-        public void ExecuteRunToStringOnEmptyList_ActualEquals0000()
+        public void ExecuteRunToStringOnEmptyList_ActualEqualsNull()
         {
             // runs ToString on an empty method
             // Arrange
-            string expected = "0000";
+            string expected = null;
             string actual = "";
             CustomList<int> newIntList = new CustomList<int>();
 
@@ -98,7 +98,7 @@ namespace CustomListUnitTesting
             actual = newIntList.ToString();
 
             // Assert
-            // checks to see that expected actual value "0000" since a new list has capacity of 4 with default values 0
+            // checks to see that expected actual value null since there is nothing to return
             Assert.AreEqual(expected, actual);
         }
 

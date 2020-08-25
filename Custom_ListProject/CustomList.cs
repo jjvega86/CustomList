@@ -35,6 +35,11 @@ namespace Custom_ListProject
             }
         }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
         public T this [int i] // indexer allows use of index when returning value at an index or setting value at an index
         {
             get { return _items[i];}
@@ -127,7 +132,7 @@ namespace Custom_ListProject
 
         }
 
-        private int DecreaseArrayCapacity()
+        private int DecreaseArrayCapacity() // shrinks array when count is half of capacity; more efficient memory usage
         {
             int newCapacity = _capacity/2;
 
