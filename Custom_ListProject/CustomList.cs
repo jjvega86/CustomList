@@ -71,19 +71,17 @@ namespace Custom_ListProject
             
 
             int newCapacity = _capacity * 2; // creates new property value as double the previous capacity
-            T[] tempArray = new T[_count]; // temporary array allows old values to be passed into the doubled array
-            T[] newArray = new T[newCapacity];
+            T[] tempArray = new T[newCapacity];// temporary array allows old values to be passed into the doubled array
 
-            
+
             for (int i = 0; i < _count; i++)
             {
                 tempArray[i] = _items[i];
-                newArray[i] = tempArray[i];
-
             }
-            _items = newArray;
+
+            _items = tempArray;
             return newCapacity;
-            
+
         }
 
         public bool Remove(T item)
@@ -105,7 +103,7 @@ namespace Custom_ListProject
                 if (_items[i].Equals(item)) // 1 is found at index 0!
                 {
                     _items[i] = _items[i+1]; //items[0] = items[0+1 = 1]. items[0] = 2
-                    i++; // equal 1
+                    i++; // equals 1
 
                     for (int j = i; j < _count-1; j++) // looks through index 1 - 2
                     {
@@ -133,23 +131,24 @@ namespace Custom_ListProject
         {
             int newCapacity = _capacity/2;
 
-            T[] tempArray = new T[_count]; 
-            T[] newArray = new T[newCapacity];
-
+            T[] tempArray = new T[newCapacity]; 
 
             for (int i = 0; i < _count; i++)
             {
                 tempArray[i] = _items[i];
-                newArray[i] = tempArray[i];
-
             }
 
-            _items = newArray;
+            _items = tempArray;
             return newCapacity;
 
         }
 
-        
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+
 
 
     }
