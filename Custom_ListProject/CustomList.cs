@@ -143,10 +143,7 @@ namespace Custom_ListProject
 
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        
 
 
 
