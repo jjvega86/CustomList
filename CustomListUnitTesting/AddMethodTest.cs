@@ -11,21 +11,21 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void Execute_AddOneItem_CountEqualsOne()
         {
-            //add a single item to the list
+            // add a single item to the list
 
-            //Arrange
+            // Arrange
             int itemOne = 3;
             int expected = 1;
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
-            //calls the Add method from CustomList to add the variable '3' to the list
+            // Act
+            // calls the Add method from CustomList to add the variable '3' to the list
             newIntList.Add(itemOne);
             actual = newIntList.Count;
 
-            //Assert
-            //checks to see that the Count is 1
+            // Assert
+            // checks to see that the Count is 1
             Assert.AreEqual(expected, actual);
         }
 
@@ -33,7 +33,7 @@ namespace CustomListUnitTesting
 
         public void Execute_AddTwoItems_CountEqualsTwo()
         {
-            //Arrange
+            // Arrange
             // add two items to the list
             int itemOne = 3;
             int itemTwo = 4;
@@ -41,13 +41,13 @@ namespace CustomListUnitTesting
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
+            // Act
             newIntList.Add(itemOne); 
             newIntList.Add(itemTwo);
             actual = newIntList.Count;
 
-            //Assert
-            //checks that the expected and actual Counts equal 2
+            // Assert
+            // checks that the expected and actual Counts equal 2
             Assert.AreEqual(expected, actual);
 
         }
@@ -55,20 +55,20 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void Execute_AddTwoItems_CapacityEquals4()
         {
-            //Arrange
+            // Arrange
             int itemOne = 3;
             int itemTwo = 4;
             int expected = 4;
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
+            // Act
             newIntList.Add(itemOne);
             newIntList.Add(itemTwo);
             actual = newIntList.Capacity;
 
-            //Assert
-            //checks that the expected and actual capacity equal 4 when two items are added
+            // Assert
+            // checks that the expected and actual capacity equal 4 when two items are added
             Assert.AreEqual(expected, actual);
 
 
@@ -78,7 +78,7 @@ namespace CustomListUnitTesting
 
         public void Execute_AddSixItems_CapacityEquals8()
         {
-            //Arrange
+            // Arrange
             int itemOne = 3;
             int itemTwo = 4;
             int itemThree = 7;
@@ -89,7 +89,7 @@ namespace CustomListUnitTesting
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
+            // Act
             newIntList.Add(itemOne);
             newIntList.Add(itemTwo);
             newIntList.Add(itemThree);
@@ -98,7 +98,7 @@ namespace CustomListUnitTesting
             newIntList.Add(itemSix);
             actual = newIntList.Capacity;
 
-            //Assert
+            // Assert
             // checks that the expected and actual capacity is 8, after enough items are added to array to double capacity
             Assert.AreEqual(expected, actual);
             
@@ -108,7 +108,7 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void Execute_AddSixItems_IndexZeroIsThree()
         {
-            //Arrange
+            // Arrange
             int itemOne = 3;
             int itemTwo = 4;
             int itemThree = 7;
@@ -120,7 +120,7 @@ namespace CustomListUnitTesting
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
+            // Act
             newIntList.Add(itemOne);
             newIntList.Add(itemTwo);
             newIntList.Add(itemThree);
@@ -130,7 +130,7 @@ namespace CustomListUnitTesting
             actual = newIntList[0];
 
 
-            //Assert
+            // Assert
             // checks index 0 for correct expected value of 3
             Assert.AreEqual(expected, actual);
 
@@ -141,7 +141,7 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void Execute_AddSixItems_IndexTwoIsSeven()
         {
-            //Arrange
+            // Arrange
             int itemOne = 3;
             int itemTwo = 4;
             int itemThree = 7;
@@ -153,7 +153,7 @@ namespace CustomListUnitTesting
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
+            // Act
             newIntList.Add(itemOne);
             newIntList.Add(itemTwo);
             newIntList.Add(itemThree);
@@ -163,7 +163,7 @@ namespace CustomListUnitTesting
             actual = newIntList[2];
 
 
-            //Assert
+            // Assert
             // checks index 2 for correct expected value of 7
             Assert.AreEqual(expected, actual);
 
@@ -174,7 +174,7 @@ namespace CustomListUnitTesting
         [TestMethod]
         public void Execute_AddSixItems_IndexFiveIsTwelve()
         {
-            //Arrange
+            // Arrange
             int itemOne = 3;
             int itemTwo = 4;
             int itemThree = 7;
@@ -186,7 +186,7 @@ namespace CustomListUnitTesting
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
-            //Act
+            // Act
             newIntList.Add(itemOne);
             newIntList.Add(itemTwo);
             newIntList.Add(itemThree);
@@ -196,7 +196,7 @@ namespace CustomListUnitTesting
             actual = newIntList[5];
 
 
-            //Assert
+            // Assert
             // checks index 5 for correct expected value of 12
             Assert.AreEqual(expected, actual);
 
