@@ -35,6 +35,13 @@ namespace Custom_ListProject
             }
         }
 
+        public T this [int i]
+        {
+            get
+            { return _items[i];}
+          
+        }
+
         public CustomList() // constructor sets initial count to 0, capacity to 4, and instantiates the array with size as default capacity
         {
             _count = 0;
