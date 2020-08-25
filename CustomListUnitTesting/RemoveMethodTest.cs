@@ -84,7 +84,7 @@ namespace CustomListUnitTesting
             int itemTwo = 4;
             int itemThree = 7;
             int itemFour = 8;
-            int itemFive = 3;
+            int itemFive = 22;
             int itemSix = 12;
 
             bool expected = false;

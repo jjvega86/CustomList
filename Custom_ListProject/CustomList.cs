@@ -88,28 +88,33 @@ namespace Custom_ListProject
 
         public bool Remove(T item)
         {
-            //I want to look through all of the items in an array
-            //if found, I want to remove that item
-            //then assign all items ahead of it one index down in the array
-            //if the count shrinks to half of the capacity, I want to decrease the array capacity by half
+            // I want to look through all of the items in an array
+            // if found, I want to remove that item
+            // then assign all items ahead of it one index down in the array
+            // if the count shrinks to half of the capacity, I want to decrease the array capacity by half
             
+            //example
+            // array has elements 1,2,3,4 
+            // remove 1 at (located at 0 index)
+            // count == 4
+            // capacity == 8
             bool wasRemoved = false;
 
-            for (int i = 0; i < _items.Length; i++)
+            for (int i = 0; i < _count; i++) // looks through index 0-3
             {
-                if (_items[i].Equals(item))
+                if (_items[i].Equals(item)) // 1 is found at index 0!
                 {
-                    _items[i] = _items[i+1];
-                    i++;
+                    _items[i] = _items[i+1]; //items[0] = items[0+1 = 1]. items[0] = 2
+                    i++; // equal 1
 
-                    for (int j = i; j < _items.Length-1; j++)
+                    for (int j = i; j < _count-1; j++) // looks through index 1 - 2
                     {
-                        _items[j] = _items[j + 1];
-
+                        _items[j] = _items[j + 1]; // items[1] = items[2], items[2] = items[3]
+                        // loop ends at index 2
                     }
 
-                    _items[_items.Length] = default;
-                    _count--;
+                    _items[_count] = default; //items[3] = 0
+                    _count--;// count = 3
                     wasRemoved = true;
                     break;
                 }
@@ -128,8 +133,18 @@ namespace Custom_ListProject
         {
             int newCapacity = _capacity/2;
 
+            T[] tempArray = new T[_count]; 
+            T[] newArray = new T[newCapacity];
 
 
+            for (int i = 0; i < _count; i++)
+            {
+                tempArray[i] = _items[i];
+                newArray[i] = tempArray[i];
+
+            }
+
+            _items = newArray;
             return newCapacity;
 
         }
