@@ -35,10 +35,10 @@ namespace Custom_ListProject
             }
         }
 
-        public T this [int i]
+        public T this [int i] // indexer allows use of index when returning value at an index or setting value at an index
         {
-            get
-            { return _items[i];}
+            get { return _items[i];}
+            set { _items[i] = value; }
           
         }
 

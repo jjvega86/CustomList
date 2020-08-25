@@ -132,7 +132,7 @@ namespace CustomListUnitTesting
 
             //Assert
             // checks index 0 for correct expected value of 3
-            Assert.Equals(expected, actual);
+            Assert.AreEqual(expected, actual);
 
 
 
@@ -165,7 +165,7 @@ namespace CustomListUnitTesting
 
             //Assert
             // checks index 2 for correct expected value of 7
-            Assert.Equals(expected, actual);
+            Assert.AreEqual(expected, actual);
 
 
 
@@ -182,7 +182,7 @@ namespace CustomListUnitTesting
             int itemFive = 3;
             int itemSix = 12;
 
-            int expected = 3;
+            int expected = 12;
             int actual = 0;
             CustomList<int> newIntList = new CustomList<int>();
 
@@ -198,7 +198,7 @@ namespace CustomListUnitTesting
 
             //Assert
             // checks index 5 for correct expected value of 12
-            Assert.Equals(expected, actual);
+            Assert.AreEqual(expected, actual);
 
 
 
