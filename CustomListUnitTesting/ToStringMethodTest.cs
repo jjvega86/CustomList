@@ -28,6 +28,8 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
+
         public void ExecuteCombineSixIntElementsIntoString_ActualEquals123456()
         {
             // checks that six elements are combined into a single string
@@ -56,6 +58,7 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
+        [TestMethod]
         public void ExecuteCombineSixStringElementsIntoString_ActualEquals123456()
         {
             // checks that six elements are combined into a single string

@@ -35,10 +35,7 @@ namespace Custom_ListProject
             }
         }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        
 
         public T this [int i] // indexer allows use of index when returning value at an index or setting value at an index
         {
@@ -148,7 +145,26 @@ namespace Custom_ListProject
 
         }
 
-        
+        public override string ToString() // overrides standard ToString method to allow for empty list case and looping through the custom list
+        {
+            string builtString = "";
+            if (_count == 0)
+            {
+                builtString = null;
+            }
+            else
+            {
+                for (int i = 0; i < _count; i++)
+                {
+                    builtString += _items[i];
+
+                }
+
+            }
+            return builtString;
+        }
+
+
 
 
 
