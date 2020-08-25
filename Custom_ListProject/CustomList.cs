@@ -164,6 +164,14 @@ namespace Custom_ListProject
             return builtString;
         }
 
+        public static CustomList<T> operator+ (CustomList<T> list1, CustomList<T> list2)
+        {
+            CustomList<T> result = new CustomList<T>();
+
+            return result;
+
+        }
+
 
 
 

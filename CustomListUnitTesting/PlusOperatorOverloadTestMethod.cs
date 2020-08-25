@@ -96,14 +96,5 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void TestMethod4()
-        {
-        }
-
-        [TestMethod]
-        public void TestMethod5()
-        {
-        }
-    }
+     
 }
