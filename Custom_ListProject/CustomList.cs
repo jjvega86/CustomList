@@ -54,31 +54,28 @@ namespace Custom_ListProject
 
 
         public void Add(T item) // generic item allows any data type to be passed in
-        {
-            _items[_count] = item;
-            _count++;
+        {                   
+            _items[_count] = item; //sets value passed in equal to the array location at the current count
+            _count++; // count is then increased to make sure previous data isn't overwritten
 
-            if (_count == _capacity)
+            if (_count == _capacity) // if equal, size of array needs to be doubled to allow more values to be passed in
             {
-                Capacity = IncreaseArrayCapacity(ref _count, ref _capacity);
+                Capacity = IncreaseArrayCapacity(); //private method returns new double capacity and sets the Capacity property equal to it
                 
             }
 
         }
 
-        private int IncreaseArrayCapacity(ref int count, ref int capacity)
+        private int IncreaseArrayCapacity() // private method doubles capacity property
         {
-            //need to create a new array
-            //three buckets
-            //create a temporary array to transfer values
-            //then a new array with the new capacity 
+            
 
-            int newCapacity = capacity * 2;
-            T[] tempArray = new T[count];
+            int newCapacity = _capacity * 2; // creates new property value as double the previous capacity
+            T[] tempArray = new T[_count]; // temporary array allows old values to be passed into the doubled array
             T[] newArray = new T[newCapacity];
 
             
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < _count; i++)
             {
                 tempArray[i] = _items[i];
                 newArray[i] = tempArray[i];
