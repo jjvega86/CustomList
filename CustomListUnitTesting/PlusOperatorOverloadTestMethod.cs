@@ -78,7 +78,7 @@ namespace CustomListUnitTesting
             expected.Add(2);
             expected.Add(3);
             expected.Add(4);
-            
+
             CustomList<int> actual = new CustomList<int>();
             CustomList<int> list1 = new CustomList<int>();
             list1.Add(1);
@@ -96,5 +96,5 @@ namespace CustomListUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
-     
+    }
 }
