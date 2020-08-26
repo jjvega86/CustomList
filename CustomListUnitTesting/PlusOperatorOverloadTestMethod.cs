@@ -12,10 +12,12 @@ namespace CustomListUnitTesting
         {
             // adds two lists together with one element in each list
             // Arrange
-
+            string actualString;
             CustomList<int> expected = new CustomList<int>();
             expected.Add(1);
             expected.Add(2);
+            string expectedString = expected.ToString();
+
             CustomList<int> actual = new CustomList<int>();
             CustomList<int> list1 = new CustomList<int>();
             list1.Add(1);
@@ -25,10 +27,11 @@ namespace CustomListUnitTesting
             // Act
 
             actual = list1 + list2;
+            actualString = actual.ToString();
 
             // Assert
             // checks to see that expected actual value is 12, a combination of both arrays list1 and list2
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedString, actualString);
         }
 
         [TestMethod]

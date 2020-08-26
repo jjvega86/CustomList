@@ -181,7 +181,6 @@ namespace Custom_ListProject
             }
 
             return result;
-            // why are the tests failing if the actual and expected are the same values?
         }
 
 
