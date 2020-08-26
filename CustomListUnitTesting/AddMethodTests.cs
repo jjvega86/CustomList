@@ -5,7 +5,7 @@ using Custom_ListProject;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class AddMethodTest
+    public class AddMethodTests
     {
         
         [TestMethod]
