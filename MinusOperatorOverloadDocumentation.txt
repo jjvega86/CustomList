@@ -1,0 +1,95 @@
+CustomList<T> Operator- Method
+Overloads the "-" operator to allow instances of the CustomList class to be subtracted from each other.
+
+
+
+Syntax
+public static CustomList<T> operator- (CustomList<T> list1, CustomList<T> list2)
+
+
+
+Parameters
+CustomList<T> list1, CustomList<T> list2
+
+
+
+The two lists to be operated upon. If any element in the second list is found in the first list, that element is removed from the first list.
+
+
+
+Returns
+CustomList<T> result
+
+
+
+All remaining elements from the first CustomList instantitated object are added to the result CustomList object, which is then returned.
+
+
+
+Example
+
+
+Method declared in CustomList<T> class
+
+
+public static CustomList<T> operator- (CustomList<T> list1, CustomList<T> list2)
+{
+        CustomList<T> result = new CustomList<T>();
+
+  
+       for (int i = 0; i < list1.Count; i++)
+      {
+             for (int k = 0; k < list2.Count; k++)
+             {
+                    if (list1[i].Equals(list2[k]))
+                    {
+                         list1.Remove(list1[i]);
+                   }
+            }
+     }
+
+
+         result += list1;
+         return result;
+
+
+}
+
+
+
+Method called in Program.cs
+static void Main(string[] args)
+{
+
+CustomList<int> result = new CustomList<int>();
+
+CustomList<int> list1 = new CustomList<int>();
+
+list1.Add(1)
+
+list1.Add(2)
+
+list1.Add(3)
+
+
+CustomList<int> list2 = new CustomList<int>();
+
+list2.Add(3)
+
+list2.Add(4)
+
+
+result = list1 - list2;
+
+
+
+Console.WriteLine(result.ToString());
+
+
+
+//output
+
+12
+
+
+}
