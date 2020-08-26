@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Custom_ListProject
 {
-    public class CustomList <T>
+    public class CustomList <T> : IEnumerable<T>
     {
         T[] _items; // underscore because Microsoft naming conventions for private member variables
 
@@ -50,6 +50,15 @@ namespace Custom_ListProject
             _capacity = 4;
 
             _items = new T[_capacity];
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < _count; i++)
+            {
+                yield return _items[i];
+
+            }
         }
 
 
@@ -185,11 +194,6 @@ namespace Custom_ListProject
 
         public static CustomList<T> operator- (CustomList<T> list1, CustomList<T> list2)
         {
-            // I want to pass two lists into my method
-            // If any values from the second list are present in the first, I want to remove them from the first
-            // then, I want to add the remaining values in the first list to the result list
-            // then, return that list as a result of the operation
-
             CustomList<T> result = new CustomList<T>();
 
             for (int i = 0; i < list1.Count; i++)
