@@ -47,7 +47,6 @@ namespace CustomListUnitTesting
             CustomList<int> expected = new CustomList<int>();
             expected.Add(1);
             expected.Add(2);
-            expected.Add(3);
             string expectedString = expected.ToString();
 
             CustomList<int> actual = new CustomList<int>();
