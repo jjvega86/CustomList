@@ -52,14 +52,18 @@ namespace Custom_ListProject
             _items = new T[_capacity];
         }
 
+      
+
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < _count; i++)
             {
                 yield return _items[i];
-
             }
         }
+
+        
+
 
 
 
