@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Custom_ListProject
 {
-    public class CustomList <T> : IEnumerable<T>
+    public class CustomList <T> : IEnumerable
     {
         T[] _items; // underscore because Microsoft naming conventions for private member variables
 
@@ -54,7 +55,7 @@ namespace Custom_ListProject
 
       
 
-        public IEnumerator<T> GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < _count; i++)
             {

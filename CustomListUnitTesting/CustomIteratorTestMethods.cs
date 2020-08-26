@@ -23,7 +23,7 @@ namespace CustomListUnitTesting
             // Act
             foreach (int number in list1)
             {
-                actual++;
+                actual += number;
             }
 
             // Assert
