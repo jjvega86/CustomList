@@ -5,7 +5,7 @@ using Custom_ListProject;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class ToStringMethodTest
+    public class ToStringMethodTests
     {
         [TestMethod]
         public void ExecuteCombineTwoIntElementsIntoString_ActualEquals34()

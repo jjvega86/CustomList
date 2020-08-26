@@ -6,7 +6,7 @@ using Custom_ListProject;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class RemoveMethodTest
+    public class RemoveMethodTests
     {
         [TestMethod]
         public void ExecuteRemoveOneValue_CountEquals5()  

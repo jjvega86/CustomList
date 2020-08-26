@@ -5,7 +5,7 @@ using Custom_ListProject;
 namespace CustomListUnitTesting
 {
     [TestClass]
-    public class PlusOperatorOverloadTestMethod
+    public class PlusOperatorOverloadMethodTests
     {
         [TestMethod]
         public void ExecuteAddTwoListsOneValueEach_ActualEquals12()
