@@ -11,6 +11,8 @@ namespace CustomListUnitTesting
         public void ExecuteAddTwoListsOneValueEach_ActualEquals12()
         {
             // adds two lists together with one element in each list
+            // convert lists into string values in order to compare equality using Assert.AreEqual
+
             // Arrange
             string actualString;
             CustomList<int> expected = new CustomList<int>();
@@ -38,6 +40,8 @@ namespace CustomListUnitTesting
         public void ExecuteAddTwoListsFourValuesEach_ActualEquals12345678()
         {
             // adds two lists together with one element in each list
+            // convert lists into string values in order to compare equality using Assert.AreEqual
+
             // Arrange
 
             CustomList<int> expected = new CustomList<int>();
@@ -49,7 +53,11 @@ namespace CustomListUnitTesting
             expected.Add(6);
             expected.Add(7);
             expected.Add(8);
+            string expectedString = expected.ToString();
+
+
             CustomList<int> actual = new CustomList<int>();
+            string actualString;
             CustomList<int> list1 = new CustomList<int>();
             list1.Add(1);
             list1.Add(2);
@@ -64,16 +72,18 @@ namespace CustomListUnitTesting
             // Act
 
             actual = list1 + list2;
-
+            actualString = actual.ToString();
             // Assert
             // checks to see that expected actual value is 12345678, a combination of both arrays list1 and list2
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedString, actualString);
         }
 
         [TestMethod]
         public void ExecuteAddTwoListsOneEmpty_ActualEquals1234()
         {
             // adds two lists together with one element in each list
+            // convert lists into string values in order to compare equality using Assert.AreEqual
+
             // Arrange
 
             CustomList<int> expected = new CustomList<int>();
@@ -81,8 +91,10 @@ namespace CustomListUnitTesting
             expected.Add(2);
             expected.Add(3);
             expected.Add(4);
+            string expectedString = expected.ToString();
 
             CustomList<int> actual = new CustomList<int>();
+            string actualString;
             CustomList<int> list1 = new CustomList<int>();
             list1.Add(1);
             list1.Add(2);
@@ -93,10 +105,11 @@ namespace CustomListUnitTesting
             // Act
 
             actual = list1 + list2;
+            actualString = actual.ToString();
 
             // Assert
             // checks to see that expected actual value is 1234, with one of the arrays returning empty
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedString, actualString);
         }
 
     }
