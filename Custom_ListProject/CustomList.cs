@@ -7,10 +7,12 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+
 
 namespace Custom_ListProject
 {
-    public class CustomList <T> : IEnumerable
+    public class CustomList <T> : IEnumerable, IComparable
     {
         T[] _items; // underscore because Microsoft naming conventions for private member variables
 
@@ -64,6 +66,8 @@ namespace Custom_ListProject
                 yield return _items[i];
             }
         }
+
+        
 
 
         public void Add(T item) // generic item allows any data type to be passed in
@@ -248,6 +252,35 @@ namespace Custom_ListProject
             return result;
 
         }
+
+        public void Sort()
+        {
+            // straight insertion sorting algorithm
+
+            CustomList<int> temp = new CustomList<int>();
+
+            foreach (T item in _items)
+            {
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    if (temp[i] <= item)
+                    {
+
+                    }
+
+                }
+            }
+
+
+            
+        }
+
+        public int CompareTo(Object obj)
+        {
+
+        }
+
+        
 
 
 

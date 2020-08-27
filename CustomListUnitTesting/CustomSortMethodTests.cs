@@ -65,5 +65,38 @@ namespace CustomListUnitTesting
             // expected actual is 12345678
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Execute_SortIntListInAscendingOrder_Equals13345778()
+        {
+            // sort a longer, more complex list in ascending order
+            // Arrange
+            CustomList<int> expected = new CustomList<int>();
+            expected.Add(1);
+            expected.Add(3);
+            expected.Add(3);
+            expected.Add(4);
+            expected.Add(5);
+            expected.Add(7);
+            expected.Add(7);
+            expected.Add(8);
+
+            CustomList<int> actual = new CustomList<int>();
+            actual.Add(7);
+            actual.Add(3);
+            actual.Add(4);
+            actual.Add(3);
+            actual.Add(5);
+            actual.Add(8);
+            actual.Add(7);
+            actual.Add(1);
+
+            // Act
+            actual.Sort();
+
+            //Assert
+            // expected actual is 133456778, attempting with duplicate numbers
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
