@@ -97,35 +97,25 @@ namespace Custom_ListProject
 
         }
 
-        public bool Remove(T item)
+        public bool Remove(T item) // removes a single instance of the item. Pulls the other elements down an index
         {
-            // I want to look through all of the items in an array
-            // if found, I want to remove that item
-            // then assign all items ahead of it one index down in the array
-            // if the count shrinks to half of the capacity, I want to decrease the array capacity by half
-            
-            //example
-            // array has elements 1,2,3,4 
-            // remove 1 at (located at 0 index)
-            // count == 4
-            // capacity == 8
             bool wasRemoved = false;
 
-            for (int i = 0; i < _count; i++) // looks through index 0-3
+            for (int i = 0; i < _count; i++)
             {
-                if (_items[i].Equals(item)) // 1 is found at index 0!
+                if (_items[i].Equals(item)) 
                 {
-                    _items[i] = _items[i+1]; //items[0] = items[0+1 = 1]. items[0] = 2
-                    i++; // equals 1
+                    _items[i] = _items[i+1]; 
+                    i++; 
 
-                    for (int j = i; j < _count-1; j++) // looks through index 1 - 2
+                    for (int j = i; j < _count-1; j++) 
                     {
-                        _items[j] = _items[j + 1]; // items[1] = items[2], items[2] = items[3]
-                        // loop ends at index 2
+                        _items[j] = _items[j + 1];
+                        
                     }
 
-                    _items[_count] = default; //items[3] = 0
-                    _count--;// count = 3
+                    _items[_count] = default;
+                    _count--;
                     wasRemoved = true;
                     break;
                 }
@@ -226,7 +216,7 @@ namespace Custom_ListProject
             // adding the combined list to the result list and returning that result
 
             CustomList<T> result = new CustomList<T>();
-            int counter = _count + listToZip._count;
+            int counter = this.Count + listToZip.Count;
             int index = 0;
 
             while (counter > 0)

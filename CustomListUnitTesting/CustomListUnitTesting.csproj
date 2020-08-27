@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AddMethodTests.cs" />
     <Compile Include="CustomIteratorTestMethods.cs" />
+    <Compile Include="CustomSortMethodTests.cs" />
     <Compile Include="MinusOperatorOverloadMethodTests.cs" />
     <Compile Include="PlusOperatorOverloadMethodTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
