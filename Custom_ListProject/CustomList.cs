@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -51,6 +52,7 @@ namespace Custom_ListProject
             _capacity = 4;
 
             _items = new T[_capacity];
+            
         }
 
       
@@ -215,7 +217,7 @@ namespace Custom_ListProject
             return result;
         }
 
-        public CustomList<T> Zip(CustomList<T> list1, CustomList<T> list2)
+        public CustomList<T> Zip(CustomList<T> listToZip)
         {
             // I want to zip two lists together
             // by taking the first value from the first list
@@ -224,20 +226,35 @@ namespace Custom_ListProject
             // adding the combined list to the result list and returning that result
 
             CustomList<T> result = new CustomList<T>();
+            int counter = _count + listToZip._count;
+            int index = 0;
 
-            foreach (CustomList<T> item in list1)
+            while (counter > 0)
             {
-                for (int i = 0; i < result.Capacity; i++)
+                if (_count == 0)
                 {
-                    if (i % 2 == 0)
-                    {
-                        result.Add(item);
-                    }
+                    result.Add(listToZip[index]);
+                    counter--;
+                    index++;
+
                 }
+                else if (listToZip._count == 0)
+                {
+                    result.Add(_items[index]);
+                    counter--;
+                    index++;
+
+                }
+                else
+                {
+                    result.Add(_items[index]);
+                    counter--;
+                    result.Add(listToZip[index]);
+                    counter--;
+                    index++;
+                }
+
             }
-
-
-
             return result;
 
         }
