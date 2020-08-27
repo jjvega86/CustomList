@@ -63,11 +63,6 @@ namespace Custom_ListProject
             }
         }
 
-        
-
-
-
-
 
         public void Add(T item) // generic item allows any data type to be passed in
         {                   
