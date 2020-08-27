@@ -215,6 +215,33 @@ namespace Custom_ListProject
             return result;
         }
 
+        public CustomList<T> Zip(CustomList<T> list1, CustomList<T> list2)
+        {
+            // I want to zip two lists together
+            // by taking the first value from the first list
+            // then adding the first value from the second list
+            // and going back and forth
+            // adding the combined list to the result list and returning that result
+
+            CustomList<T> result = new CustomList<T>();
+
+            foreach (CustomList<T> item in list1)
+            {
+                for (int i = 0; i < result.Capacity; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        result.Add(item);
+                    }
+                }
+            }
+
+
+
+            return result;
+
+        }
+
 
 
 
